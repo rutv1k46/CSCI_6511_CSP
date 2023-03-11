@@ -2,13 +2,11 @@ from heuristics import least_constraining_values, min_remaining_values
 from inference import arc_consistency
 
 # Function to run the backtracking search, it wraps the backtrack method and passes it an initial empty assignment
-# def backtracking_search(csp, min_remaining_values, least_constraining_values, arc_consistency):
 def backtracking_search(csp):
     return backtrack(csp, {})
 
-# Implementation of the backtracking algorithm, using MRV and LCV as heuristic for variable selection and value ordering
+# Implementation of the backtracking algorithm, using MRV and LCV as heuristics
 # it also utilizes AC3 for constraint propagation
-# def backtrack(csp, assignment, min_remaining_values, least_constraining_values, arc_consistency):
 def backtrack(csp, assignment):
     # Base case: if assignment is complete then return assignment
     if csp.valid_solution(assignment):

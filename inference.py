@@ -30,19 +30,19 @@ def revise(csp, Xi, Xj):
     revised = []
     
     for x in csp.domains[Xi]:
-        value_exists = False # if no value y in Dj allows (x,y) to satisfy the constraint between Xi and Xj
+        value_exists = False                                # if no value y in Dj allows (x,y) to satisfy the constraint between Xi and Xj
         
         for y in csp.domains[Xj]:
-            if csp.constraint_function(Xi, x, Xj, y): # If this is true then a value exists, so no revision
+            if csp.constraint_function(Xi, x, Xj, y):       # If this is true then a value exists, so no revision
                 value_exists = True
                 break
             
-        if not value_exists: # No value satisfies the constraint, so remove it
+        if not value_exists:                                # No value satisfies the constraint, so remove it
             revised.append(x)
             
     return revised
 
-
+# function to maintain arc consistency, that calls AC3 on the arcs of neighbors of the given variable
 def arc_consistency(csp, variable):
     queue = [(x, variable) for x in csp.neighbors[variable]]
     return ac3(csp, queue = queue)
