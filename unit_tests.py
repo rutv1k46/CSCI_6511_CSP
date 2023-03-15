@@ -1,11 +1,11 @@
 import os
 import unittest
 
-from backtracking import backtracking_search
-from graphcoloring import GraphColoringCSP
+from backtrack import backtracking_search
+from graph_coloring import GraphColoringCSP
 from fileparser import FileParser
 from heuristics import least_constraining_values, min_remaining_values
-from inference import arc_consistency, revise, ac3
+from ac3 import arc_consistency, revise, ac3
 
 class TestFileParser(unittest.TestCase):
 

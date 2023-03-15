@@ -1,6 +1,5 @@
-import json
-from backtracking import backtracking_search
-from graphcoloring import GraphColoringCSP
+from backtrack import backtracking_search
+from graph_coloring import GraphColoringCSP
 
 def solveGC(input_file):
     csp = GraphColoringCSP.from_file(input_file)
